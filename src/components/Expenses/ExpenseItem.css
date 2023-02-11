@@ -54,3 +54,18 @@
     padding: 0.5rem 1.5rem;
   }
 }
+
+.expenseItem-container {
+  background-color: blue;
+  display: flex;
+
+  padding: 5px;
+  margin-top: 10px;
+  border-radius: 10px;
+}
+
+.datedetailcontainer {
+  display: flex;
+  background-color: orange;
+  width: 100%;
+}

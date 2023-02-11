@@ -1,3 +1,10 @@
+.expense-container {
+  margin: 10px;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+}
+
 .expenses {
   padding: 1rem;
   background-color: black;

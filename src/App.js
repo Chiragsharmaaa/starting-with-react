@@ -1,8 +1,11 @@
 import Expenses from "./components/Expenses/Expenses";
+import './App.css';
 
 const App = () => {
   return (
-    <Expenses />
+    <div className="app-comp-class">
+      <Expenses />
+    </div>
   )
 };
 

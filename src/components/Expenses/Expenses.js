@@ -15,7 +15,7 @@ const Expenses = () => {
     {
       id: 'e3',
       title: 'Car Insurance',
-      LocationOfExpenditure: 'Banglore',
+      LocationOfExpenditure: 'Bangalore',
       amount: 294.67,
       date: new Date(2021, 2, 28),
     },
@@ -29,11 +29,13 @@ const Expenses = () => {
   ];
 
   return (
-    <Card className='expenses'>
-      {expenses.map((expense) => {
-        return <ExpenseItem title={expense.title} LocationOfExpenditure={expense.LocationOfExpenditure} amount={expense.amount} date={expense.date}></ExpenseItem>
-      })}
-    </Card>
+    <div className="expense-container">
+      <Card className='expenses'>
+        {expenses.map((expense) => {
+          return <ExpenseItem title={expense.title} LocationOfExpenditure={expense.LocationOfExpenditure} amount={expense.amount} date={expense.date}></ExpenseItem>
+        })}
+      </Card>
+    </div>
   )
 };
 
