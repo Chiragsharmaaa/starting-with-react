@@ -1,23 +1,30 @@
 import ExpenseDate from './ExpenseDate';
 import ExpenseDetails from './ExpenseDetails';
 import './ExpenseItem.css';
+import React, { useState } from 'react';
 
 const ExpenseItem = (props) => {
-    const clickHandler = (e) => {
-        const elements = document.getElementsByClassName('expenseItem-container')
-        if (elements.length > 0) {
-            e.target.closest('.expenseItem-container').remove();
-        }
+    const [title, setTitle] = useState(props.title);
+    const [amount, setAmount] = useState(props.amount);
+
+    const clickTitleHandler = () => {
+        setTitle('updated!')
+        console.log(title)
+    }
+    const clickAmountHandler = () => {
+        setAmount('100$')
+        console.log(amount)
     }
     return (
         <div className='expenseItem-container'>
             <div className='expense-item'>
                 <div className='datedetailcontainer'>
                     <ExpenseDate date={props.date} />
-                    <ExpenseDetails title={props.title}
+                    <ExpenseDetails title={title}
                         LocationOfExpenditure={props.LocationOfExpenditure}
-                        amount={props.amount} />
-                    <button onClick={clickHandler}>Change Title</button>
+                        amount={amount} />
+                    <button onClick={clickTitleHandler}>Change Title</button>
+                    <button onClick={clickAmountHandler}>Change Amount</button>
                 </div>
             </div >
         </div>
