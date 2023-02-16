@@ -2,7 +2,7 @@ import ExpenseItem from "./ExpenseItem";
 import Card from "../UI/Card";
 import './Expenses.css'
 
-const Expenses = () => {
+const Expenses = (props) => {
   const expenses = [
     {
       id: 'e1',
@@ -31,8 +31,8 @@ const Expenses = () => {
   return (
     <div className="expense-container">
       <Card className='expenses'>
-        {expenses.map((expense) => {
-          return <ExpenseItem title={expense.title} LocationOfExpenditure={expense.LocationOfExpenditure} amount={expense.amount} date={expense.date}></ExpenseItem>
+        {props.items.map((expense) => {
+          return <ExpenseItem key={expense.id} title={expense.title} LocationOfExpenditure={expense.LocationOfExpenditure} amount={expense.amount} date={expense.date}></ExpenseItem>
         })}
       </Card>
     </div>
